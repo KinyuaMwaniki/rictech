@@ -1,0 +1,9 @@
+<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}" defer></script>
+<script src="{{ asset('dist/js/adminlte.js') }}" defer></script>
+{{-- <script src="{{ asset('dist/js/demo.js') }}" defer></script> --}}
+<script src="{{ asset('plugins/jquery-mousewheel/jquery.mousewheel.js') }}" defer></script>
+<script src="{{ asset('plugins/raphael/raphael.min.js') }}" defer></script>
+<script src="{{ asset('plugins/jquery-mapael/jquery.mapael.min.js') }}" defer></script>
+<script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}" defer></script>
+<script src="{{ asset('plugins/chart.js/Chart.min.js') }}" defer></script>
+<script src="{{ asset('dist/js/pages/dashboard2.js') }}" defer></script>
