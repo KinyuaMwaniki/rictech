@@ -22,5 +22,5 @@ Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/test', function() {
-    return view('adminlte.page');
+    return view('frontend.landing');
 });
