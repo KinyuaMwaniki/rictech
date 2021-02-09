@@ -20,10 +20,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-text-width"></i>
-                            Current Details
-                        </h3>
                         <div class="text-right">
                             <a href="{!!  route('company.edit', $company_detail->id) !!}" class="btn btn-info"
                                 type="button">Edit</a>
