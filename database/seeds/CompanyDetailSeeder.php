@@ -19,6 +19,7 @@ class CompanyDetailSeeder extends Seeder
             'facebook' => 'www.facebook.com/page',
             'twitter' => 'www.twitter.com/page',
             'instagram' => 'www.instagram/page',
+            'slogan' => 'We supply you with the IT supplies you need to keep your business going',
             ]);
         }
     }

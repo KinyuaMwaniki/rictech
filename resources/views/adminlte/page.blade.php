@@ -12,6 +12,24 @@
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
+                    @if (Session::has('message'))
+                        <p class="alert alert-info alert-clearfix">{{ Session::get('message') }}</p>
+                    @endif
+                    @if (Session::has('error'))
+                        <p class="alert alert-danger alert-clearfix">{{ Session::get('error') }}</p>
+                    @endif
+                    @if (isset($failures))
+                        <div class="alert alert-danger" role="alert">
+                            <strong>Errors:</strong>
+                            <ul>
+                                @foreach ($failures as $failure)
+                                    @foreach ($failure->errors() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     @yield('header')
                 </div>
             </div>
