@@ -20,61 +20,110 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary">
-                    <div class="card-header">
-                        {{-- <h3 class="card-title">dd</h3> --}}
+                    {!! Form::model($company_detail, ['route' => ['company.update', $company_detail->id],  'enctype' => 'multipart/form-data', 'method' =>
+                    'patch']) !!}
+                    <div class="card-body">
+                        <div class="form-group row">
+                            {!! Form::label('company_name', 'Company Name<span class="required-marker">*</span>', ['class'
+                            => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('company_name', null, ['class' => 'form-control ' .
+                                ($errors->has('company_name') ? 'is-invalid' : '')]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label(
+                            'email',
+                            'Email<span class="required-marker">*</span>',
+                            [
+                            'class' => 'col-sm-2
+                            col-form-label',
+                            ],
+                            false,
+                            ) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('email', null, ['class' => 'form-control ' . ($errors->has('email') ?
+                                'is-invalid' : '')]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label(
+                            'mobile',
+                            'Mobile<span class="required-marker">*</span>',
+                            [
+                            'class' => 'col-sm-2
+                            col-form-label',
+                            ],
+                            false,
+                            ) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('mobile', null, ['class' => 'form-control ' . ($errors->has('mobile') ?
+                                'is-invalid' : '')]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('facebook', 'Facebook', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('facebook', null, [
+                                'class' => "form-control
+                                {{ $errors->has('facebook') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('twitter', 'Twitter', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('twitter', null, [
+                                'class' => "form-control
+                                {{ $errors->has('twitter') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('instagram', 'Instagram', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('instagram', null, [
+                                'class' => "form-control
+                                {{ $errors->has('instagram') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            {!! Form::label('slogan', 'Company Slogan', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('slogan', null, [
+                                'class' => "form-control
+                                {{ $errors->has('slogan') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('logo', 'Company Logo', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::file('logo', null, [
+                                'class' => "custom-file-input
+                                {{ $errors->has('logo') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
                     </div>
-                    <form role="form" action="{{ route('company.edit', $company_detail->id  ) }}">
-                        @csrf
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="company_name" class="col-sm-2 col-form-label">Company Name</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="company_name" name="company_name"
-                                        placeholder="Company Name">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="email" class="col-sm-2 col-form-label">Email</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="mobile" name="mobile"
-                                        placeholder="Mobile Phone Number">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="facebook" class="col-sm-2 col-form-label">Facebook</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="facebook" name="facebook"
-                                        placeholder="Facebook Page Link">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="twitter" class="col-sm-2 col-form-label">Twitter</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="twitter" name="twitter"
-                                        placeholder="Twitter Page Link">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="instagram" class="col-sm-2 col-form-label">Instagram</label>
-                                <div class="col-sm-10">
-                                    <input type="instagram" class="form-control" id="instagram" name="instagram"
-                                        placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </form>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
     </div>
+
 @endsection
