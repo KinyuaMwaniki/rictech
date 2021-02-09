@@ -10,15 +10,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{!!  route('details.show') !!}">
+                <a href="{!!  route('company.index') !!}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Business Details</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
                 </a>
               </li>
               <li class="nav-item">

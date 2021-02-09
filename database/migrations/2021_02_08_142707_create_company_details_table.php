@@ -15,6 +15,12 @@ class CreateCompanyDetailsTable extends Migration
     {
         Schema::create('company_details', function (Blueprint $table) {
             $table->id();
+            $table->string('company_name');
+            $table->string('email');
+            $table->string('mobile');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('instagram');
             $table->timestamps();
         });
     }
