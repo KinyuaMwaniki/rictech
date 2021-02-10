@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditCompanyDetailsRequest extends FormRequest
+class UpdatePortfolioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,9 @@ class EditCompanyDetailsRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => 'bail|required|email',
-            'company_name' => 'bail|required',
-            'mobile' => 'bail|required',
-            'logo' => 'bail|image',
-            'about_us_image' => 'bail|image|max:700',
+            'header' => 'bail|required',
+            'subheader' => 'bail|required',
+            'image' => 'bail|image',
         ];
     }
 }

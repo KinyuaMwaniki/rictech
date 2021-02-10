@@ -20,10 +20,6 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">
-                            <i class="fas fa-text-width"></i>
-                            Current Details
-                        </h3>
                         <div class="text-right">
                             <a href="{!!  route('company.edit', $company_detail->id) !!}" class="btn btn-info"
                                 type="button">Edit</a>
@@ -36,14 +32,22 @@
                             <dd class="col-sm-8">{{ $company_detail->company_name }}</dd>
                             <dt class="col-sm-4">Company Email</dt>
                             <dd class="col-sm-8">{{ $company_detail->email }}</dd>
-                            <dt class="col-sm-4">Mobile</dt>
-                            <dd class="col-sm-8">{{ $company_detail->mobile }}<dd>
+                             <dt class="col-sm-4">Mobile</dt>
+                            <dd class="col-sm-8">{{ $company_detail->mobile }}
+                            <dd>
+                           <dt class="col-sm-4">Address</dt>
+                            <dd class="col-sm-8">{{ $company_detail->address }}
+                            <dd>
                             <dt class="col-sm-4">Facebook</dt>
                             <dd class="col-sm-8">{{ $company_detail->facebook }}</dd>
                             <dt class="col-sm-4">Twitter</dt>
                             <dd class="col-sm-8">{{ $company_detail->twitter }}</dd>
                             <dt class="col-sm-4">Instagram</dt>
                             <dd class="col-sm-8">{{ $company_detail->instagram }}</dd>
+                            <dt class="col-sm-4">About Us: Heading</dt>
+                            <dd class="col-sm-8">{{ $company_detail->about_us_heading }}</dd>
+                            <dt class="col-sm-4">About Us: Description</dt>
+                            <dd class="col-sm-8">{!! $company_detail->about_us_description !!}</dd>
                         </dl>
                     </div>
                     <!-- /.card-body -->

@@ -90,12 +90,15 @@ class CompanyDetailsController extends Controller
             'company_name' => $request->company_name,
             'email' => $request->email,
             'mobile' => $request->mobile,
+            'address' => $request->address,
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,
+            'about_us_heading' => $request->about_us_heading,
+            'about_us_description' => $request->about_us_description,
         ]);
 
-        if($request->hasFile('logo'))
+         if($request->hasFile('logo'))
         {
             $fileNameWithExt = $request->file('logo')->getClientOriginalName();
             $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
@@ -103,6 +106,17 @@ class CompanyDetailsController extends Controller
             $fileNameToStore = $fileName.'_'.time().'.'.$extension;
             $path = $request->file('logo')->storeAs('public/logo', $fileNameToStore);
             $company_detail->logo = $fileNameToStore;
+            $company_detail->save();
+        }
+
+       if($request->hasFile('about_us_image'))
+        {
+            $fileNameWithExt = $request->file('about_us_image')->getClientOriginalName();
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('about_us_image')->getClientOriginalExtension();
+            $fileNameToStore = $fileName.'_'.time().'.'.$extension;
+            $path = $request->file('about_us_image')->storeAs('public/about', $fileNameToStore);
+            $company_detail->about_us_image = $fileNameToStore;
             $company_detail->save();
         }
 

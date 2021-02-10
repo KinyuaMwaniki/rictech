@@ -8,5 +8,7 @@
 <script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}" ></script>
 <script src="{{ asset('plugins/chart.js/Chart.min.js') }}" ></script>
 <script src="{{ asset('dist/js/pages/dashboard2.js') }}" ></script>
-
 <script src="https://kit.fontawesome.com/c4f6ccb2bc.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+@yield('scripts')
