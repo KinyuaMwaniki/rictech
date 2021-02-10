@@ -16,6 +16,7 @@ class CompanyDetailSeeder extends Seeder
             'company_name' => 'Rictech Supplies',
             'email' => 'info@rictec.com',
             'mobile' => '071111111',
+            'address' => 'Kimathi Avenue, Behind Stanley Hotel',
             'facebook' => 'www.facebook.com/page',
             'twitter' => 'www.twitter.com/page',
             'instagram' => 'www.instagram/page',

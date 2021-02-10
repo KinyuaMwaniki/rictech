@@ -90,6 +90,7 @@ class CompanyDetailsController extends Controller
             'company_name' => $request->company_name,
             'email' => $request->email,
             'mobile' => $request->mobile,
+            'address' => $request->address,
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,

@@ -75,6 +75,16 @@
                         </div>
 
                         <div class="form-group row">
+                            {!! Form::label('address', 'Address', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('address', null, [
+                                'class' => "form-control
+                                {{ $errors->has('address') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             {!! Form::label('twitter', 'Twitter', ['class' => 'col-sm-2 col-form-label'], false) !!}
                             <div class="col-sm-10">
                                 {!! Form::text('twitter', null, [
@@ -146,7 +156,8 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            {!! Form::label('about_us_image', 'About Us: Image (700kb)', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            {!! Form::label('about_us_image', 'About Us: Image (700kb)', ['class' => 'col-sm-2
+                            col-form-label'], false) !!}
                             <div class="col-sm-10">
                                 {!! Form::file('about_us_image', null, [
                                 'class' => "custom-file-input
@@ -179,7 +190,7 @@
                 placeholder: 'Discussion Points',
                 tabsize: 2,
                 height: 200
-            }).summernote('code', `{!! $company_detail->about_us_description !!}` );
+            }).summernote('code', `{!!  $company_detail->about_us_description !!}`);
         });
 
     </script>

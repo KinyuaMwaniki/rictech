@@ -32,8 +32,11 @@
                             <dd class="col-sm-8">{{ $company_detail->company_name }}</dd>
                             <dt class="col-sm-4">Company Email</dt>
                             <dd class="col-sm-8">{{ $company_detail->email }}</dd>
-                            <dt class="col-sm-4">Mobile</dt>
+                             <dt class="col-sm-4">Mobile</dt>
                             <dd class="col-sm-8">{{ $company_detail->mobile }}
+                            <dd>
+                           <dt class="col-sm-4">Address</dt>
+                            <dd class="col-sm-8">{{ $company_detail->address }}
                             <dd>
                             <dt class="col-sm-4">Facebook</dt>
                             <dd class="col-sm-8">{{ $company_detail->facebook }}</dd>

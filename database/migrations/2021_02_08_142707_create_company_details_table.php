@@ -18,6 +18,7 @@ class CreateCompanyDetailsTable extends Migration
             $table->string('company_name');
             $table->string('email');
             $table->string('mobile');
+            $table->string('address');
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
