@@ -12,4 +12,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('company', 'CompanyDetailsController');
     Route::resource('portfolios', 'PortfoliosController');
     Route::resource('services', 'ServicesController');
+    Route::get('users-edit-password', 'UsersController@editPassword')->name('users.edit-password');
+    Route::patch('users-update-password/{user}', 'UsersController@updatePassword')->name('users.update-password');
 });
