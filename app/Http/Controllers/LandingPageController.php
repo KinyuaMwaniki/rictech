@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Service;
 use App\Portfolio;
 use App\CompanyDetail;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ class LandingPageController extends Controller
     {
         $company_detail = CompanyDetail::all()->first();
         $portfolios = Portfolio::all();
-        return view('frontend.landing', compact(['company_detail', 'portfolios']));
+        $services = Service::all();
+        return view('frontend.landing', compact(['company_detail', 'portfolios', 'services']));
     }
 }

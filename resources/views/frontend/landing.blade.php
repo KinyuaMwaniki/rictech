@@ -53,8 +53,11 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <a href="{!!  route('landing') !!}" class="logo mr-auto"><img
-                    src="/storage/logo/{{ $company_detail->logo }}" alt="Logo"></a>
+            @if(!is_null($company_detail->logo))
+                <a href="{!!  route('landing') !!}" class="logo mr-auto"><img src="/storage/logo/{{ $company_detail->logo }}" alt="Logo"></a>
+            @else
+                <h1 class="logo mr-auto"><a href="{{ route('landing') }}">{{ $company_detail->company_name }}<span></span></a></h1>
+            @endif
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -88,9 +91,7 @@
 
                 <div class="section-title">
                     <h2>Our Products</h2>
-                    <h3>Our <span>Products</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
+                    <p>Rictech supplies will delivers quality IT products at a price you will love!!</p>
                 </div>
 
                 <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
@@ -126,70 +127,24 @@
         <!-- ======= Services Section ======= -->
         <section id="services" class="services">
             <div class="container" data-aos="fade-up">
-
                 <div class="section-title">
                     <h2>Services</h2>
-                    <h3>Check our <span>Services</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
+                    <p>We offer a full spectrum of IT services to help your business succeed. Speak to us to get a
+                        proposal for the services listed below</p>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                            <h4><a href="">Lorem Ipsum</a></h4>
-                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                    @foreach ($services as $service)
+                        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in"
+                            data-aos-delay="100">
+                            <div class="icon-box">
+                                <div class="icon"><i class="bx bx-slideshow"></i></div>
+                                <h4><a href="">{{ $service->header }}</a></h4>
+                                <p>{{ $service->description }}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-file"></i></div>
-                            <h4><a href="">Sed ut perspiciatis</a></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-tachometer"></i></div>
-                            <h4><a href="">Magni Dolores</a></h4>
-                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="100">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-world"></i></div>
-                            <h4><a href="">Nemo Enim</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="200">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-slideshow"></i></div>
-                            <h4><a href="">Dele cardo</a></h4>
-                            <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in"
-                        data-aos-delay="300">
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bx-arch"></i></div>
-                            <h4><a href="">Divera don</a></h4>
-                            <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
-
             </div>
         </section><!-- End Services Section -->
 
@@ -198,49 +153,21 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>About</h2>
-                    <h3>Find Out More <span>About Us</span></h3>
-                    <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas
-                        atque vitae autem.</p>
+                    <h2>About Us</h2>
+                    <p>Find out more about {{ $company_detail->company_name }}</p>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        {{-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> --}}
+
+                        <img src="/storage/about/{{ $company_detail->about_us_image }}" class="img-fluid" alt="About Us">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center"
                         data-aos="fade-up" data-aos-delay="100">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-                        <p class="font-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li>
-                                <i class="bx bx-store-alt"></i>
-                                <div>
-                                    <h5>Ullamco laboris nisi ut aliquip consequat</h5>
-                                    <p>Magni facilis facilis repellendus cum excepturi quaerat praesentium libre trade
-                                    </p>
-                                </div>
-                            </li>
-                            <li>
-                                <i class="bx bx-images"></i>
-                                <div>
-                                    <h5>Magnam soluta odio exercitationem reprehenderi</h5>
-                                    <p>Quo totam dolorum at pariatur aut distinctio dolorum laudantium illo direna
-                                        pasata redi</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
+                        <h3>{{ $company_detail->about_us_heading }}</h3>
+                          
+                        {!! $company_detail->about_us_description !!}
                     </div>
                 </div>
 

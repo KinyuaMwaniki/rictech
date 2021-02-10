@@ -20,6 +20,18 @@ class CompanyDetailSeeder extends Seeder
             'twitter' => 'www.twitter.com/page',
             'instagram' => 'www.instagram/page',
             'slogan' => 'We supply you with the IT supplies you need to keep your business going',
+            'about_us_image' => 'default.jpg',
+            'about_us_heading' => 'We are an industry leader in the supply of Office and IT supplies',
+            'about_us_description' => '
+                                <p>
+                                    We are committed to making quality IT supplies available to all. We supply all the major brands of 
+                                    computers, networking equipment, and office supplies. Our Supplies come with warranty to give our clients peace of mind.
+                                </p>
+                                <p>
+                                    In Addition, we perform contracted services such as network maintenance, server maintenance, installation
+                                    of windows and antivirus, among others.
+                                </p>
+                                ',
             ]);
         }
     }

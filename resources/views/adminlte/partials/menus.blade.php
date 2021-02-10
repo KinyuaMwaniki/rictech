@@ -19,7 +19,13 @@
                       <li class="nav-item">
                           <a href="{!!  route('portfolios.index') !!}" class="nav-link">
                               <i class="far fa-circle nav-icon"></i>
-                              <p>Products and Services</p>
+                              <p>Products</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="{!!  route('services.index') !!}" class="nav-link">
+                              <i class="far fa-circle nav-icon"></i>
+                              <p>Services</p>
                           </a>
                       </li>
                   </ul>

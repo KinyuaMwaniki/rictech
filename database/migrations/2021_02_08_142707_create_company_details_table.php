@@ -23,6 +23,9 @@ class CreateCompanyDetailsTable extends Migration
             $table->string('instagram')->nullable();
             $table->string('slogan')->nullable();
             $table->string('logo')->nullable();
+            $table->string('about_us_image')->nullable();
+            $table->string('about_us_heading')->nullable();
+            $table->text('about_us_description')->nullable();
             $table->timestamps();
         });
     }

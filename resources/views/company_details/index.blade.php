@@ -33,13 +33,18 @@
                             <dt class="col-sm-4">Company Email</dt>
                             <dd class="col-sm-8">{{ $company_detail->email }}</dd>
                             <dt class="col-sm-4">Mobile</dt>
-                            <dd class="col-sm-8">{{ $company_detail->mobile }}<dd>
+                            <dd class="col-sm-8">{{ $company_detail->mobile }}
+                            <dd>
                             <dt class="col-sm-4">Facebook</dt>
                             <dd class="col-sm-8">{{ $company_detail->facebook }}</dd>
                             <dt class="col-sm-4">Twitter</dt>
                             <dd class="col-sm-8">{{ $company_detail->twitter }}</dd>
                             <dt class="col-sm-4">Instagram</dt>
                             <dd class="col-sm-8">{{ $company_detail->instagram }}</dd>
+                            <dt class="col-sm-4">About Us: Heading</dt>
+                            <dd class="col-sm-8">{{ $company_detail->about_us_heading }}</dd>
+                            <dt class="col-sm-4">About Us: Description</dt>
+                            <dd class="col-sm-8">{!! $company_detail->about_us_description !!}</dd>
                         </dl>
                     </div>
                     <!-- /.card-body -->

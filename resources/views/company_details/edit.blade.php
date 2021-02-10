@@ -20,8 +20,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card card-primary">
-                    {!! Form::model($company_detail, ['route' => ['company.update', $company_detail->id],  'enctype' => 'multipart/form-data', 'method' =>
-                    'patch']) !!}
+                    {!! Form::model($company_detail, ['route' => ['company.update', $company_detail->id], 'enctype' =>
+                    'multipart/form-data', 'method' => 'patch']) !!}
                     <div class="card-body">
                         <div class="form-group row">
                             {!! Form::label('company_name', 'Company Name<span class="required-marker">*</span>', ['class'
@@ -114,6 +114,49 @@
                                 ]) !!}
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            {!! Form::label('about_us_heading', 'About Us: Heading', ['class' => 'col-sm-2 col-form-label'],
+                            false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::text('about_us_heading', null, [
+                                'class' => "form-control
+                                {{ $errors->has('about_us_heading') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {!! Form::label(
+                            'about_us_description',
+                            'About us: Description',
+                            [
+                            'class' => 'col-sm-2
+                            col-form-label',
+                            ],
+                            false,
+                            ) !!}
+                            <div class="col-sm-10">
+                                {!! Form::textarea('about_us_description', null, [
+                                'class' => 'form-control summernote',
+                                ]) !!}
+                                @error('about_us_description')
+                                    <div class="error text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            {!! Form::label('about_us_image', 'About Us: Image (700kb)', ['class' => 'col-sm-2 col-form-label'], false) !!}
+                            <div class="col-sm-10">
+                                {!! Form::file('about_us_image', null, [
+                                'class' => "custom-file-input
+                                {{ $errors->has('about_us_image') ? 'is-invalid' : '' }}",
+                                ]) !!}
+                            </div>
+                        </div>
+
+
+
                     </div>
 
                     <div class="card-footer">
@@ -126,4 +169,18 @@
     </div>
     </div>
 
+@endsection
+
+
+@section('scripts')
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                placeholder: 'Discussion Points',
+                tabsize: 2,
+                height: 200
+            }).summernote('code', `{!! $company_detail->about_us_description !!}` );
+        });
+
+    </script>
 @endsection
