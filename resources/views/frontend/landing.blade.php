@@ -8,12 +8,7 @@
     <meta content="" name="keywords">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Favicons -->
-    <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
-
-    <!-- Google Fonts -->
+    
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
@@ -61,7 +56,6 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Products</a></li>
@@ -101,7 +95,7 @@
                             <img src="/storage/portfolios/{{ $portfolio->image }}" class="img-fluid" alt="">
                             <div class="portfolio-info">
                                 <h4>{{ $portfolio->header }}</h4>
-                                <p>{{ $portfolio->subheader }}Portfolios</p>
+                                <p>{{ $portfolio->subheader }}</p>
                                 <a href="/storage/portfolios/{{ $portfolio->image }}" data-gall="portfolioGallery"
                                     class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
                             </div>
